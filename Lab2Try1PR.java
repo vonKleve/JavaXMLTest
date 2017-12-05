@@ -23,8 +23,8 @@ public class Lab2Try1PR {
            System.out.println(mex.toString());
         }
         
-        File mXMLfile = new File("C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\xdescr.xml");
-        File mXSDfile = new File("C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\descr.xsd");
+        File mXMLfile = new File("PRL2\\xdescr.xml");
+        File mXSDfile = new File("PRL2\\descr.xsd");
        
         Document doc = null;
         try{
@@ -65,7 +65,7 @@ public class Lab2Try1PR {
         try{
             StAX mstax = new StAX();
             FileReader mread;
-            mread = new FileReader("C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\xdescr.xml");
+            mread = new FileReader("PRL2\\xdescr.xml");
             
             mstax.analyze(mread);
         }
@@ -77,12 +77,12 @@ public class Lab2Try1PR {
         validator.validate(mXMLfile, mXSDfile);
         
         
-        String sXmlSource = "C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\xdescr.xml";
-        String sXslSource = "C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\xsldescr.xsl";
-        String sHtmlSource = "C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\htmldescr.html";
+        String sXmlSource = "PRL2\\xdescr.xml";
+        String sXslSource = "PRL2\\xsldescr.xsl";
+        String sHtmlSource = "PRL2\\htmldescr.html";
         
-        String xmltest = "C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\test2.xml";
-        String xsltest = "C:\\Users\\Dell\\Desktop\\Materials\\PRL2\\xsldescr.xsl";
+        String xmltest = "\PRL2\\test2.xml";
+        String xsltest = "PRL2\\xsldescr.xsl";
         
         HtmlTransf htmltt = new HtmlTransf();
         htmltt.transform(xsltest, xmltest, sHtmlSource);
