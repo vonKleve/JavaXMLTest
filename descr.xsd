@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="Medicine"
+           targetNamespace="Medicine"
+           elementFormDefault="qualified">
+  <xs:element name="Medicine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="drug">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="name" type="xs:string" />
+                <xs:element name="category">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:enumeration value="Antibiotic" />
+                      <xs:enumeration value="Painkiller" />
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="pharm" type="xs:string" />
+                <xs:element name="analogs" type="xs:string"/>
+                <xs:element name="version">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="certificate">
+                        <xs:complexType>
+                          <xs:attribute name="number" type="xs:positiveInteger" />
+                          <xs:attribute name="id" type="xs:ID" />
+                          <xs:attribute name="expdate" type="xs:string" />
+                          <xs:attribute name="organisation" type="xs:string" />
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="package">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="amount">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:positiveInteger">
+                                  <xs:pattern value="[0-9]{1}" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="price">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:positiveInteger">
+                                  <xs:minInclusive value="9" />
+                                  <xs:maxInclusive value="100" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="dosage" type="xs:unsignedInt" use="required" />
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xxsiml-stylesheet type="text/xsl" href="xsldescr.xsl"?>
+<Medicine  
+  xmlns="Medicine"
+  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xmlns:env="http://www.w3.org/2003/05/Medicine"
+  >
+  <drug>
+    <name>Penicillin</name>
+    <category>Antibiotic</category>
+    <pharm>
+      FlimngIncorp
+    </pharm>
+    <analogs>
+        Benzylpenicillin, 
+        Phenoxymethypenicillin 
+    </analogs>
+    <version dosage="1">
+      <certificate number="2" id="M416" expdate="01/01/2017" organisation="UN" />
+      <package>
+        <amount>9</amount>
+        <price> 
+          100
+        </price>
+      </package>
+    </version>
+   </drug>
+  <drug>
+    <name>Benzylpenicillin</name>
+    <category>Antibiotic</category>
+    <pharm>FremingCorp</pharm>
+    <analogs>
+      Penicillin,
+      Phenoxymethypenicillin
+    </analogs>
+    <version dosage="2">
+      <certificate number="3" id="M417" expdate="03/03/2018" organisation="League of Nations" />
+      <package>
+        <amount>3</amount>
+        <price>99</price>
+      </package>
+    </version>
+  </drug>
+</Medicine>
